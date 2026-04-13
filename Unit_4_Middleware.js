@@ -9,7 +9,8 @@ const addName=(req,res,next)=>{
 const addcol=(req,res,next)=>{
     req.col="LJU"
     console.log("College added")
-    next()
+    //next()
+    res.send("End")
 }
 const addMarks=(req,res,next)=>{
     req.total=50+40
