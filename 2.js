@@ -1,9 +1,10 @@
 var exp=require('express')
 var app=exp()
 
-app.use(exp.static('../public',{index:'form.html'}))
-app.get('/process_get',(req,res)=>{
-    console.log(req.query)
-    res.send("Wlcome"+req.query.uname+req.query.lname)
+var path=require("path")
+var sp=path.join(__dirname,"../public")
+app.get("/",(req,res) => {
+res.sendFile(sp+"/2.html")
+app.use(exp.static("../public"))
 })
-app.listen(8085)
+app.listen(8089)
